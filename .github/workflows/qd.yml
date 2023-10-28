@@ -1,25 +1,30 @@
-name: qd
- 
+name: JD自动签到
+
 on:
   push:
-    branches:
-      - main
-  schedule:   
-    - cron: '0 9 * * *'   # 定时运行的时间，国际标准时间，北京时间要+8
- 
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '55 15 * * *'
+  watch:
+    types: started
+
 jobs:
-  run-coupons: # 任务名
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@main  #采用main分支下的
-           
-      - name: Setup Node.js
-        uses: actions/setup-node@v2  #安装node.js
+      - uses: actions/checkout@v3
+      - name: 初始化Python
+        uses: actions/setup-python@v3
         with:
-          node-version: '14'
-          
-      - name: Install Dependency       
+          python-version: 3.9
+      - name: 安装依赖
         run: |
-               npm install
-            
-          node ./index.js  # 要运行的js脚本，放在根目录下
+          pip install -r requirements.txt
+  
+      - name: 53
+        run: |
+          python3 main.py
+         
