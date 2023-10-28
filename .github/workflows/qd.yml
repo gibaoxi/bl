@@ -22,11 +22,6 @@ jobs:
         run: |
         
                npm install
-               # 安装
-               npm install -g @catlair/bilitools
-# 查看帮助
-               bilitools -h
-# 指定配置路径运行
-               bilitools -c ./config.json
-               node ./index.js  #脚本存在根目录scripts文件夹下
+               npm run start:multi
+               node index.js  #脚本存在根目录scripts文件夹下
  
