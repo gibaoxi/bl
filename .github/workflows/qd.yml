@@ -21,10 +21,10 @@ jobs:
       - name: Install Dependency       
         run: |
           # 安装
-npm install -g @catlair/bilitools
+          npm install -g @catlair/bilitools
 # 查看帮助
-bilitools -h
+          bilitools -h
 # 指定配置路径运行
-bilitools -c ./config.json        
+          bilitools -c ./config.json        
           node ./index.js  #脚本存在根目录scripts文件夹下
  
