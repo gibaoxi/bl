@@ -1,5 +1,5 @@
-name:哔哩哔哩
- 
+name: JD自动签到
+
 on:
   push:
     branches:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2  #安装node.js
         with:
-          node-version: '14'
+          node-version: '16'
           
       - name: Install Dependency       
         run: |
