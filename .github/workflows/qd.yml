@@ -16,12 +16,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2  #安装node.js
         with:
-          node-version: '14'
+          node-version: '12'
           
       - name: Install Dependency       
         run: |
-        
+       
                npm install
-               npm run start:multi
+              
                node index.js  #脚本存在根目录scripts文件夹下
  
